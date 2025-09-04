@@ -3,37 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Open‑Mic Map • New Zealand</title>
+  <title>Open‑Mic Map, New Zealand</title>
 
   <!-- Leaflet CDN (as requested) -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="map.css">
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>Open‑Mic Map • New&nbsp;Zealand</h1>
-      <!-- <div class="actions">
-        <label class="file-label" for="json-input">Load JSON</label>
-        <input id="json-input" type="file" accept="application/json" />
-        <button id="clear-btn" class="btn" title="Clear selection">Clear</button>
-      </div> -->
-    </header>
-
     <main class="grid">
+    
       <section class="map-area">
         <div id="map" role="application" aria-label="Open-mic locations map"></div>
       </section>
+    
       <aside class="panel" aria-label="Locations panel">
-        <!-- <div class="controls">
-          <input id="search" class="search" type="text" placeholder="Search by name or suburb…" />
-        </div> -->
+        <form>
+            <label for="region">Filter</label>
+            <select id="region">
+                <option value="all">All</option>
+            </select>
+            <span id="result-count"></span>
+        </form>
         <div id="list" class="list" role="listbox" aria-label="Open-mic locations"></div>
-        <div id="count" class="count">0 locations</div>
       </aside>
+    
     </main>
   </div>
-  <script type="text/javascript" src="script.js" ></script>
+  <script type="text/javascript" src="map.js" ></script>
 </body>
 </html>
